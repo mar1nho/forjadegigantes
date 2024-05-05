@@ -52,3 +52,19 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+if (localStorage.getItem('contadorAcessos')) {
+    // Se existir, obtém o valor atual do contador de acessos
+    var contador = parseInt(localStorage.getItem('contadorAcessos'));
+} else {
+    // Se não existir, define o contador como 0
+    var contador = 0;
+}
+
+// Incrementa o contador de acessos
+contador++;
+// Atualiza o contador no armazenamento local
+localStorage.setItem('contadorAcessos', contador);
+
+// Atualiza o texto da tag h2 com o valor do contador
+document.getElementById('contador').textContent = contador;
